@@ -1,0 +1,24 @@
+//------------------------------------------------------------------------------
+//- Clinic data section
+//------------------------------------------------------------------------------
+//- for about page
+
+//- cld = Clinic data which is located in global config(.pug)
+-
+  var cldLeft= [
+    cld.job,
+    cld.fullName,
+    cld.address
+  ]
+
+-
+  var cldRigth= [
+    cld.phoneSub,
+    cld.mail,
+    cld.schedule
+  ]
+
+section.sctn-md
+  .container
+    h2.pd-lg График приема граждан руководителем
+    +uiListData(cldLeft, cldRigth)

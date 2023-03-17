@@ -1,0 +1,9 @@
+//-
+  Navbar mixin
+  
+mixin uiNavBar
+  nav&attributes(attributes)
+    ul
+      each item in navBar
+        li: a(href="/"+item.href data-page-name=item.data)=item.name
+    block

@@ -1,0 +1,17 @@
+//------------------------------------------------------------------------------
+//- Doctors section
+//------------------------------------------------------------------------------
+//- Main doctors section for main doctors pages
+
+section.doctors-main
+  .container
+    .heading
+      +uiTitleIcon Врачи
+      h1 #[span Врачи] нашей клиники
+      p Здесь вы можете узнать больше информации о наших врачах, их специализациях и опыте работы
+    .wrap
+      .row.g-3
+        each i in doctorsList
+          .col-12.col-md-6.col-lg-4.col-xl-3
+            +uiDoctorCard(i.name, i.surname, i.spec, i.href, i.img)
+        +uiAdditionCard('Совсем скоро клиника ЦАОП №1 расширит спектр специалистов в разных направлениях', 3).col-3

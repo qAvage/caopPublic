@@ -1,0 +1,66 @@
+//------------------------------------------------------------------------------
+//- About section
+//------------------------------------------------------------------------------
+
+-
+  var aboutSlides = [
+    {
+      src: 'hero.jpg',
+      alt: 'reception'
+    },
+    {
+      src: 'hero.jpg',
+      alt: 'reception'
+    },
+    {
+      src: 'hero.jpg',
+      alt: 'reception'
+    },
+    {
+      src: 'hero.jpg',
+      alt: 'reception'
+    },
+    {
+      src: 'hero.jpg',
+      alt: 'reception'
+    },
+    {
+      src: 'hero.jpg',
+      alt: 'reception'
+    },
+    {
+      src: 'hero.jpg',
+      alt: 'reception'
+    }
+  ]
+
+//- Common about section
+section.about(class=[pageName === 'home' ? 'sctn-lg' : 'sctn-md'])
+  .container
+    .row
+      .col-12.col-lg-6
+        +uiTitleIcon О нас
+        if pageName === 'about'
+          h1 #[span Центр] амбулаторной онкологической #[span помощи № 1]
+        else 
+          h2 Центр амбулаторной онкологической помощи № 1
+        p ЦАОП №1 — это многопрофильный медицинский центр в Невском районе, специализирующийся на профилактике, диагностике и лечении заболеваний в профиле терапии, урологии, андрологии, гинекологии и онкологии
+        p В нашем центре врачи назначают индивидуальное лечение каждому пациенту, не навязывая ненужных услуг, которые приводят к лишним тратам
+        ul.description-list
+          li Наша миссия — заботиться о людях, помогая им быть более здоровыми без лишних трат
+          li Наш центр построен на трех принципах: уважение, доверие и честность
+          li Мы уважаем ваше время, особенности и личные убеждения
+        .selecting-slides.u-no-select
+          if pageName === 'home'
+            +uiButton('primary-md', 'a')(href="/about.html") Подробнее о нас
+          #about-carousel-buttons.carouselButtons.u-preload
+            +uiIcon('arrow').prev
+            +uiIcon('arrow').next
+      .col-12.col-lg-6.about-carousel
+        .carousel.no-visible(class=[pageName === 'home' ? 'carousel-home-page' : 'carousel-about-page'])
+          each item in aboutSlides
+            .carousel-cell: .wrapper(style= "background-image: url(" + require('@/assets/images/' + item.src) + ')')
+        if pageName === 'about'
+          .carousel-nav.no-visible
+            each item in aboutSlides
+              .carousel-cell(style= "background-image: url(" + require('@/assets/images/' + item.src) + ')')

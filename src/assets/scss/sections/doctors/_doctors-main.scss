@@ -1,0 +1,16 @@
+//------------------------------------------------------------------------------
+//- Doctors section
+//------------------------------------------------------------------------------
+//- Main doctors section for main doctors pages
+
+section.doctors-main {
+  padding: 40px 0 70px;
+  .heading {max-width: 580px;}
+  .wrap {padding-top: 30px;}
+
+  // Media queries
+  @include media-breakpoint-down (md) {
+    padding: 40px 0;
+    .wrap {padding-top: 40px;}
+  }
+}

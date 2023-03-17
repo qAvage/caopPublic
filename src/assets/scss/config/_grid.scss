@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// Grid config
+// -----------------------------------------------------------------------------
+
+$grid-breakpoints: (
+  xs: 0,
+  sm-xs: 320px,
+  sm-md: 360px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1240px,
+  xxl: 1400px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1216px
+);
+
+$grid-columns: 12;
+
+$grid-gutter-width: 20px;
+
+$grid-row-columns: 6;
+
+$container-padding-x: 18px;
+
+$variable-prefix: bs-;
+
+$enable-grid-classes: true;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: calc($spacer / 4),
+  2: 16px,
+  3: 20px,
+  4: 30px,
+  5: 40px,
+);
+
+$gutters: $spacers;
+

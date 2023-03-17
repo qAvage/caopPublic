@@ -1,0 +1,21 @@
+//------------------------------------------------------------------------------
+//- Main Footer
+//------------------------------------------------------------------------------
+
+footer#the-footer
+  .container
+    .content.u-no-select
+      .logo
+        a(href="/")
+          +uiIcon('logo')
+      +uiNavBar
+        +uiAdress.p-sm
+      .feed
+        h4 Записаться на прием к врачу
+        +uiButton('primary-md').trigger-popup Обратный звонок
+        +uiPhoneNumber
+        span.p-sm с #{openingHours.from} до #{openingHours.to} без выходных
+        +uiSocialIcons
+      .bot
+        +uiTerms
+        span.p-sm © ООО «ЦАОП №1», 2022

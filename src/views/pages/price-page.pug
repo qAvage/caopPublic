@@ -1,0 +1,15 @@
+//------------------------------------------------------------------------------
+//- Price page
+//------------------------------------------------------------------------------
+
+extends ../layouts/base
+append config
+  -var title = 'ЦАОП №1 | Прайс'
+  -var pageClass = ''
+
+  //- Necessary for the correct display of breadcrumbs
+  -var breadcrumbSelfName = 'Прайс'
+  
+block main
+  include ../sections/price/hero-price.pug
+  include ../sections/common/catalog.pug

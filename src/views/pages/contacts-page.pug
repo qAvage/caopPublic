@@ -1,0 +1,16 @@
+//------------------------------------------------------------------------------
+//- Contacts page
+//------------------------------------------------------------------------------
+
+extends ../layouts/base
+append config
+  -var pageName = 'contacts'
+  -var title = 'ЦАОП №1 | Контакты'
+  -var pageClass = ''
+
+  //- Necessary for the correct display of breadcrumbs
+  -var breadcrumbSelfName = 'Контакты'
+
+block main
+  include ../sections/common/contacts.pug
+  include ../sections/contacts/clinic-data-contacts.pug

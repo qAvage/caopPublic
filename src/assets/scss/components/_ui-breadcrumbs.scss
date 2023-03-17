@@ -1,0 +1,18 @@
+//------------------------------------------------------------------------------
+// Breadcrumbs
+//------------------------------------------------------------------------------
+
+.breadcrumbs {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  color: $gray;
+  flex-wrap: wrap;
+  font-size: 12px;
+  line-height: 16px;
+  .ui-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+}

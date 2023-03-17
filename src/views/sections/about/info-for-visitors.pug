@@ -1,0 +1,14 @@
+//------------------------------------------------------------------------------
+//- Information for visitors section
+//------------------------------------------------------------------------------
+//- for about page
+
+section.licenses-cards.sctn-md
+  .container
+    h2.pd-lg Информация для посетителей
+    .row.gy-3
+      .col-12.col-md
+        +uiPolicyCard(policy.internalRegulations.title, policy.internalRegulations.href)
+      .col-12.col-md
+        +uiPolicyCard(policy.informationEducation.title, policy.informationEducation.href)
+      +uiAdditionCard('Клиника ЦАОП №1 работает только по лицензии').col-4

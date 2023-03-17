@@ -1,0 +1,42 @@
+//------------------------------------------------------------------------------
+// NavBar
+//------------------------------------------------------------------------------
+
+nav {
+  ul {
+    display: flex;
+
+    a {
+      position: relative;
+      transition: color .3s ease;
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 2px;
+        display: block;
+        position: absolute;
+        top: 24px;
+        left: 50%;
+        border-radius: 50px;
+        transition: width 0.3s ease, left 0.3s ease;
+      }
+      &:hover {
+        &::after {
+          width: 100%;
+          left: 0;
+        }
+      }
+      &.active {
+        &::after {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down (md) {
+    ul a::after {display: none;}
+  }
+}

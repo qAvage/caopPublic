@@ -1,0 +1,32 @@
+//------------------------------------------------------------------------------
+// Utilities
+//------------------------------------------------------------------------------
+
+// Disable selected
+.u-no-select {
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+// Disable transition effect before page load
+.u-preload *, .u-preload {
+  $null-transition: none !important;
+  -webkit-transition: $null-transition;
+  -moz-transition: $null-transition;
+  -ms-transition: $null-transition;
+  -o-transition: $null-transition;
+  transition: $null-transition;
+}
+
+// Custom scroll bar
+.scroll-bar {
+  &::-webkit-scrollbar {width: 4px;}
+  // &::-webkit-scrollbar-track {}
+  &::-webkit-scrollbar-thumb {
+    background: $dark-bg;
+    border-radius: 50px;
+  }
+  &::-webkit-scrollbar-thumb:hover {background: $gray;}
+  &::-webkit-scrollbar-thumb:window-inactive {background: transparent;}
+}

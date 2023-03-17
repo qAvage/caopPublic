@@ -1,0 +1,21 @@
+//------------------------------------------------------------------------------
+//- About page
+//------------------------------------------------------------------------------
+
+extends ../layouts/base
+append config
+  -var pageName = 'about'
+  -var title = 'ЦАОП №1 | О нас'
+  -var pageClass = ''
+  
+  //- Necessary for the correct display of breadcrumbs
+  -var breadcrumbSelfName = 'О нас'
+
+block main
+  include ../sections/common/about.pug
+  include ../sections/about/clinic-data-about.pug
+  include ../sections/about/our-licenses.pug
+  include ../sections/about/useful-links.pug
+  include ../sections/about/schedule-of-reception.pug
+  include ../sections/about/info-for-visitors.pug
+  include ../sections/about/government-contacts.pug

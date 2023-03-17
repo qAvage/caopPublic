@@ -1,0 +1,29 @@
+//------------------------------------------------------------------------------
+//- Services section
+//------------------------------------------------------------------------------
+//- Main services section for main services pages
+
+section.services-main {
+  padding: 40px 0 50px;
+  .heading {max-width: 640px;}
+  .wrap h3 {padding: 40px 0 20px;}
+
+  // Media queries
+  @include media-breakpoint-down (lg) {
+    .heading {max-width: 480px;}
+  }
+
+  @include media-breakpoint-down (md) {
+    .wrap h3 {padding: 60px 0 20px;}
+    padding: 30px 0 40px;
+  }
+
+  //TODO: Выпилить или изменить стили после написания скрипта который генерит карточки
+  .wrap {
+    .row {
+      &:nth-of-type(2) {
+        .ui-addition-card:last-of-type {display: none;}
+      }
+    }
+  }
+}

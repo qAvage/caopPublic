@@ -1,0 +1,120 @@
+//------------------------------------------------------------------------------
+// The-Footer
+//------------------------------------------------------------------------------
+
+footer#the-footer {
+  margin-top: 50px;
+  padding: 70px 0 53px 0;
+  background-color: $blue;
+
+  .content {
+    display: grid;
+    grid-template-columns: 100px auto 380px;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 
+      "logo nav feed"
+      "logo bot feed";
+    column-gap: 50px;
+    .logo {
+      grid-area: logo;
+      .ui-icon {
+        width: 100px;
+        height: 100px;
+        fill: $white;
+        transition: fill 0.25s ease-in-out;
+        &:hover {fill: $dark-bg;}
+      }
+    }
+
+    nav {
+      grid-area: nav;
+      padding: 30px;
+      color: $white;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      border-bottom: 1px solid $light-blue;
+      ul {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 60px;
+        a::after { background-color: $dark-bg;} 
+      }
+    }
+
+    .feed {
+      grid-area: feed;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 35px 0;
+      background-color: $white;
+      border-radius: 12px;
+      a {
+        display: block;
+        &:nth-child(3) {padding-top: 18px;}
+      }
+      h4 {padding-bottom: 26px;}
+      .ui-social-icons {padding-top: 23px;}
+    }
+
+    .bot {
+      grid-area: bot;
+      padding-top: 30px;
+      color: $white;
+      text-align: center;
+      li {&:first-child, &:last-of-type {padding-bottom: 16px;}}
+    }
+
+    nav, .bot {
+      a {
+        transition: color 0.25s ease-in-out;
+        &:hover {color: $dark-bg;}
+        &:focus {color: $white;}
+      }
+    }
+  }
+
+  @include media-breakpoint-down (xl) {
+    .content {
+      column-gap: 16px;
+      grid-template-columns: 100px auto 310px;
+      nav {padding: 30px 0;}
+    }
+  }
+
+  @include media-breakpoint-down (lg) {
+    margin-top: 30px;
+    padding: 80px 0 40px 0;
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      nav {
+        max-width: 300px;
+        border: none;
+        ul {
+          flex-direction: column;
+          gap: 14px;
+          padding-bottom: 40px;
+        }
+      }
+      .feed {
+        align-self: center;
+        padding: 35px 90px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down (sm) {
+    margin-top: 0px;
+    .content {
+      .bot {li {&:first-child, &:last-of-type {padding-bottom: 20px;}}}
+      .feed {
+        align-self: stretch;
+        padding: 35px 0;
+      }
+    }
+  }
+}

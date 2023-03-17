@@ -1,0 +1,28 @@
+//------------------------------------------------------------------------------
+//- Clinic data section
+//------------------------------------------------------------------------------
+//- for contacts page
+
+//- cld = Clinic data which is located in global config(.pug)
+-
+  var cldLeft= [
+    cld.TIN,
+    cld.OGRN,
+    cld.bank,
+    cld.corrCheck,
+    cld.CEO
+  ]
+
+-
+  var cldRigth= [
+    cld.CPP,
+    cld.checkingAccount,
+    cld.BIC,
+    cld.address,
+    cld.license
+  ]
+
+section.sctn-md
+  .container
+    h2.pd-lg Данные клиники
+    +uiListData(cldLeft, cldRigth)

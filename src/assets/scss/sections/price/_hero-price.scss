@@ -1,0 +1,55 @@
+// -----------------------------------------------------------------------------
+// Section hero price (price-page)
+// -----------------------------------------------------------------------------
+
+.hero-price {
+  position: relative;
+  margin: 20px 0 40px;
+  padding: 60px 0 80px;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 57.6%), url('@/assets/images/hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 40%;
+    z-index: 1;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 57%;
+    left: 0;
+    bottom: 0;
+    backdrop-filter: blur(3px);
+    z-index: 2;
+  }
+
+  .title {
+    position: relative;
+    z-index: 3;
+    p {max-width: 480px;}
+  }
+
+  @include media-breakpoint-down (xl) {
+    &::after {background-position: center 60%;}
+    &::before {right: 0;}
+  }
+  @include media-breakpoint-down (sm) {
+    padding: 0;
+    &::before {display: none;}
+    &::after {
+      margin-top: 30px;
+      position: static;
+      display: block;
+      width: 100%;
+      height: 300px;
+      background-image: url('@/assets/images/hero.jpg');
+    }
+  }
+}

@@ -1,0 +1,16 @@
+//------------------------------------------------------------------------------
+//- Services section (home-page)
+//------------------------------------------------------------------------------
+//- Intended only for the homepage
+
+section.services-homepage.sctn-lg
+  .container
+    +uiTitleIcon Услуги
+    h2 Услуги нашей клиники
+    p В нашем центре врачи назначают индивидуальное лечение каждому пациенту, не навязывая ненужных дополнительных услуг. Честность — наше главное преимущество
+    #services-carousel.card-carousel
+      each item in servicesList
+        each card in item.cards
+          .carousel-cell
+            +uiServiceCard(card.heading, card.content, card.href)
+    +uiButton('primary-md', 'a')(href="/services").u-preload Все услуги

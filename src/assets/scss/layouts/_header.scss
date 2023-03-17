@@ -1,0 +1,216 @@
+//------------------------------------------------------------------------------
+// The-Header
+//------------------------------------------------------------------------------
+
+header#the-header {
+  border-bottom: 1px solid $dark-bg;
+
+  .top, .menu, .contact {display: flex;}
+
+  // Top
+  .top {
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // Menu
+  .menu {align-items: center;}
+
+  // Logo
+  .logo {
+    i {
+      width: 60px;
+      height: 60px;
+      fill: $blue;
+    }
+  }
+
+  // DISABLE Phone number following the logo, adress and social icons,
+  // which are displayed only on the mobile version
+  .logo + a, .menu > a, .ui-social-icons {display: none;}
+
+  //Nav
+  nav {
+    ul {
+      gap: 24px;
+      a {
+        &::after { background-color: $blue; }
+        &:hover { color: $blue; }
+        &:focus { color: inherit; }
+      }
+    }
+  }
+
+  .contact {
+    padding-right: 40px;
+    padding-left: 150px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  // Burger
+  #burger {display: none;}
+
+  @include media-breakpoint-down (xl) {
+    .backdrop, nav {flex-grow: 1;}
+
+    nav {
+      ul {
+        justify-content: center;
+        gap: 15px;
+      }
+    }
+
+    .contact {
+      padding-right: 20px;
+      padding-left: 0px;
+    }
+  }
+
+  @include media-breakpoint-down (lg) {
+    nav {
+      ul {
+        justify-content: center;
+        gap: 12px;
+      }
+    }
+
+    .contact {display: none;}
+    .ui-button {padding: 14px 18px;}
+  }
+
+  @include media-breakpoint-down (md) {
+    .top {height: 67px;}
+
+    // ENABLE Phone number following the logo, adress and social icons,
+    // which are displayed only on the mobile version
+    .logo + a, .menu > a, .ui-social-icons {display: flex;}
+
+    // Logo
+    .logo {
+      i {
+        width: 56px;
+        height: 56px;
+        fill: $blue;
+      }
+    }
+
+    .ui-social-icons {padding-top: 30px;}
+    
+    .logo + a {
+      margin-left: 24px;
+      display: block;
+    }
+
+    nav ul, .menu {flex-direction: column;}
+
+    .backdrop {
+      position: absolute;
+      top: 68px;
+      right: 0;
+      width: 0;
+      overflow: hidden;
+      border-bottom-left-radius: 12px;
+      transition: width 0.4s ease;
+      z-index: 99;
+      box-shadow: $shadow-primary;
+    }
+
+    .menu {
+      padding: 40px 35px 30px 30px;
+      width: 260px;
+      align-items: flex-start;
+      background-color: $white;
+      transition: width 0.4s ease;
+    }
+
+    nav {
+      padding-bottom: 40px;
+      order: -3;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .menu > .ui-button {order: -2;}
+
+    // Change a button and make it primary
+    .ui-button {
+      padding: 17px 36px;
+      @include btnPrimaryColor
+    }
+
+    .contact {
+      padding: 14px 0 30px;
+      display: flex;
+      order: -1;
+    }
+
+    .overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 68px;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 98;
+      pointer-events: none;
+      transition: 
+        background-color .4s ease-in-out,
+        visibility .4s ease-in-out,
+        opacity .4s ease-in-out;
+    }
+
+    #burger {
+      display: flex;
+      align-items: center;
+      box-sizing: content-box;
+      padding: 10px;
+      margin-left: auto;
+      margin-right: -10px;
+      width: 28px;
+      height: 20px;
+      transition: transform .3s;
+      .icon, .icon::before, .icon::after {
+        width: 28px;
+        height: 2px;
+        background-color: black;
+        border-radius: 500px;
+      }
+      .icon {
+        transition: transform .1s, background .1s;
+        position: relative;
+        &::before, &::after {
+          content: "";
+          position: absolute;
+        }
+        &::before {top: -9px;}
+        &::after {top: 9px;}
+      }
+      .icon::before, .icon::after {
+        transition: transform .3s, background .3s;
+      }
+    }
+
+    &.opened {
+      .backdrop {width: 260px;}
+
+      .overlay {
+        background-color: $blue;
+        opacity: 0.6;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      #burger  {
+        transform: scale(0.85);
+        .icon {
+          background: transparent;
+          &::before {transform: rotateZ(45deg) scaleX(1.35) translate(6px, 6px);}
+          &::after {transform: rotateZ(-45deg) scaleX(1.35) translate(5px, -5px);}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+//------------------------------------------------------------------------------
+// Service card
+//------------------------------------------------------------------------------
+
+.ui-service-card {
+  height: 258px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid $light-bg;
+    border-radius: 12px;
+    pointer-events: none;
+  }
+  .header {
+    padding: 6px 20px;
+    min-height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+    color: $white;
+    background-color: $blue;
+    text-align: center;
+    border-radius: 8px;
+  }
+  .body {
+    margin: 0 4px;
+    padding: 12px 12px 0;
+    flex-grow: 1;
+    overflow-y: auto;
+    &::-webkit-scrollbar-track {margin-top: 12px;}
+  }
+  .footer {padding: 10px 20px 20px;}
+}

@@ -1,0 +1,39 @@
+//------------------------------------------------------------------------------
+// Government list
+//------------------------------------------------------------------------------
+
+.government-list {
+  span {color: $gray;}
+  ul {padding-top: 10px}
+  li {
+    padding: 15px 0;
+    border-bottom: 1px solid $dark-bg;
+    &:first-child {border-top: 1px solid $dark-bg;}
+    span {display: none;}
+  }
+
+  @include media-breakpoint-down (md) {
+    & > div {display: none;}
+    ul {padding: 0;}
+    li {
+      padding: 20px 0;
+      &:first-child {
+        padding-top: 0;
+        border-top: none;
+      }
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      span {
+        padding-bottom: 4px;
+        display: block;
+      }
+      & > div > div {
+        &:not(:first-child) {
+          span {padding-top: 12px;}
+        }
+      }
+    }
+  }
+}

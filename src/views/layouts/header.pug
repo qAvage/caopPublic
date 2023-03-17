@@ -1,0 +1,22 @@
+//------------------------------------------------------------------------------
+//- The Header
+//------------------------------------------------------------------------------
+
+header#the-header.u-preload
+  .container
+    .top.u-no-select
+      a(href="/").logo
+        +uiIcon('logo')
+      +uiPhoneNumber
+      .backdrop
+        .menu
+          +uiNavBar
+          .contact
+            +uiPhoneNumber
+            span.p-sm с #{openingHours.from} до #{openingHours.to} без выходных
+          +uiButton('secondary-md').trigger-popup Обратный звонок
+          +uiAdress.p-sm
+          +uiSocialIcons
+      #burger
+        .icon
+  #mobile-overlay

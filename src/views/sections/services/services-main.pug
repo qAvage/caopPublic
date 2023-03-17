@@ -1,0 +1,19 @@
+//------------------------------------------------------------------------------
+//- Services section
+//------------------------------------------------------------------------------
+//- Main services section for main services pages
+
+section.services-main
+  .container
+    .heading
+      +uiTitleIcon Услуги
+      h1 #[span Услуги] нашей клиники
+      p В нашем центре врачи назначают индивидуальное лечение каждому пациенту, не навязывая ненужных дополнительных услуг. Честность — наше главное преимущество
+    .wrap
+      each item in servicesList
+        h3= item.title
+        .row.g-2.g-md-3
+          each card in item.cards
+            .col-12.col-md-6.col-lg-4.col-xl-3
+              +uiServiceCard(card.heading, card.content, card.href)
+          +uiAdditionCard('Совсем скоро клиника ЦАОП №1 расширит спектр предоставляемых услуг', 2).col-3

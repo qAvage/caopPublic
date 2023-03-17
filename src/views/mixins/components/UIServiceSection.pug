@@ -1,0 +1,17 @@
+//- Service section mixin
+
+mixin uiServiceSection(heading, img, promotion)
+  section.service
+    .container
+      +uiTitleIcon Услуги
+      .row
+        .col-lg-8
+          h1 #{heading.stockFirst} #[span #{heading.emphasize}] #{heading.stockSecond}
+          .content
+            block content
+              .btns
+                +uiButton('primary-md').trigger-popup Записаться на консультацию
+                +uiSocialIcons
+              //- h4= promotion
+        .col-lg-4
+          .img(style= "background-image: url(" + require('@/assets/images/' + img) + ')')

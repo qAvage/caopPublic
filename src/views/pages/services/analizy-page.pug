@@ -1,0 +1,30 @@
+//------------------------------------------------------------------------------
+//- Service page (Анализы)
+//------------------------------------------------------------------------------
+
+extends ../../layouts/base
+append config
+  -var title = 'ЦАОП №1 | Лабораторные исследования'
+  -var pageClass = ''
+  -var description = 'Большой выбор лабораторных анализов. Забор крови производят опытные медсестры. Рассчитаем стоимость по телефону!'
+  
+  //- Necessary for the correct display of breadcrumbs
+  -var breadcrumbSelfName = 'Лабораторные исследования'
+  -var breadcrumbParentPage = {namePage: 'Услуги', href: 'services'}
+
+  //- Data for current service
+  -
+    var serviceHeading = {
+      stockFirst: 'Лабораторные',
+      emphasize: 'исследования',
+      stockSecond: ''
+    }
+  -var serviceImage = 'hero.jpg'
+  -var servicePromotion = 'Действует акция Прием врача терапевта + анализы = 2500 вместо 4000' 
+block main
+  +uiServiceSection(serviceHeading, serviceImage, servicePromotion)
+    prepend content
+      .separated
+        p Лабораторные анализы имеют очень важное значение в диагностике. Без них невозможно объективно оценить состояние организма, работу внутренних органов, установить диагноз.  Анализы играют важную роль в выявлении нарушений на ранних стадиях, они помогут доктору выбрать верную тактику лечения, что позволит избежать осложнений о сократить срок выздоровления
+        p У нас представлен огромный выбор лабораторных анализов, которые выполняются на современном оборудовании и в короткие сроки!
+  include ../../sections/common/catalog.pug

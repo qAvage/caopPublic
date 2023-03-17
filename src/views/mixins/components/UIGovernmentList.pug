@@ -1,0 +1,24 @@
+//- Government list mixin
+
+mixin uiGovernmentList
+  .government-list
+    .row
+      .col-12.col-lg-6.col-md-5
+        span Контролирующий орган
+      .col-12.col-lg-4.col-md-4
+        span Адрес
+      .col-12.col-lg-2.col-md-3
+        span Телефон
+    ul
+      each i in governmentContacts
+        li: .row
+          .col-12.col-lg-6.col-md-5
+            span Контролирующий орган
+            p= i.agency
+          .col-12.col-lg-4.col-md-4
+            span Адрес
+            p= i.address
+          .col-12.col-lg-2.col-md-3
+            span Телефон
+            p= i.phone
+          

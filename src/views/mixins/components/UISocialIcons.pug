@@ -1,0 +1,31 @@
+//- Social icons mixin
+-
+  var socials = [
+    {
+      name: 'vk',
+      href: socialIcons.vk,
+      title: 'Вконтакте'
+    },
+    {
+      name: 'wa',
+      href: socialIcons.wa,
+      title: 'WhatsApp'
+    },
+    {
+      name: 'tg',
+      href: socialIcons.tg,
+      title: 'Telegram'
+    }
+  ]
+  
+mixin uiSocialIcons(plate=false)
+  ul.ui-social-icons
+    each item in socials
+      li.ui-social-icon: a(href=item.href target="_blank")
+        if plate
+          .icon-plate
+            +uiIcon(item.name)
+            span=item.title
+        else
+          +uiIcon(item.name)
+

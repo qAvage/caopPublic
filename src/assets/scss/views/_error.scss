@@ -1,0 +1,39 @@
+// -----------------------------------------------------------------------------
+// Error page stylesheets
+// -----------------------------------------------------------------------------
+
+.error-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  main {flex-grow: 1;}
+
+  .error {height: 100%;}
+
+  .empty {
+    padding: 150px 0 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    span {
+      color: $blue;
+      font-size: 110px;
+      font-weight: 700;
+      line-height: 100%;
+    }
+    p {
+      max-width: 420px;
+      text-align: center;
+    }
+    a {max-width: 210px;}
+  }
+
+  @include media-breakpoint-down (md) {
+    .empty {
+      padding: 60px 0 60px;
+      span { font-size: 70px;}
+    }
+  }
+}

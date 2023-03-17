@@ -1,0 +1,28 @@
+//------------------------------------------------------------------------------
+//- The homepage
+//------------------------------------------------------------------------------
+
+extends ../layouts/base
+
+append config
+  -var pageName = 'home'
+  -var title = 'ЦАОП №1 — многопрофильный медицинский центр в Невском районе'
+  -var pageClass = 'home-page'
+
+//- Disabling breadcrumbs on the homepage
+block breadcrumbs
+
+block main
+  include ../sections/home/hero.pug
+  include ../sections/home/services.pug
+  include ../sections/home/about.pug
+
+//- Disabling common sections on the homepage
+block common
+  //- Instead, additional sections are connected
+  include ../sections/common/feedback.pug
+  include ../sections/home/doctors.pug
+  include ../sections/common/reviews.pug
+  include ../sections/common/about.pug
+  include ../sections/common/contacts.pug
+  include ../sections/common/faq.pug

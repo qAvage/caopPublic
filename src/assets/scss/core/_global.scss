@@ -1,0 +1,332 @@
+// -----------------------------------------------------------------------------
+// Application global styles
+// -----------------------------------------------------------------------------
+
+// Sections padding
+section {
+  &.sctn-sm {padding: 40px 0;}
+  &.sctn-md {padding: 50px 0;}
+  &.sctn-lg {padding: 60px 0;}
+  
+  &.sctn-sm-md {padding: 40px 0 50px;}
+
+  @include media-breakpoint-down (md) {
+    &.sctn-md {padding: 40px 0;}
+    &.sctn-lg {padding: 40px 0;}
+
+    &.sctn-sm-md {padding: 40px 0;}
+  }
+}
+
+// Global heading tag padding
+h1, h2 {
+  padding-bottom: 16px;
+  @include media-breakpoint-down (sm) {
+    padding-bottom: 14px;
+  }
+}
+
+h2.pd-lg {padding-bottom: 26px;}
+
+h1 span {color: $blue;}
+
+// Paragraph space height
+.separated p:not(:first-child) {padding-top: 14px;}
+.paragraph-description h4 {padding-bottom: 16px;}
+
+// Description list
+.description-list li {
+  display: flex;
+  gap: 12px;
+  &:not(:last-child) {
+    padding-bottom: 10px;
+  }
+  &::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    display: block;
+    flex-shrink: 0;
+    background-color: $khaki;
+    border-radius: 50px;
+    transform: translateY(2px);
+  }
+}
+
+// Flickity global style
+.flickity-page-dots {
+  margin-top: 12px;
+  position: static;
+  .flickity-page-dot {
+    margin: 0 3px;
+    width: 8px;
+    height: 8px;
+    background: $khaki;
+    border-radius: 50px;
+    transition: background .25s ease-in-out;
+    &.is-selected {background: $light-blue;}
+    &:focus{box-shadow: none;}
+  }
+}
+
+// Custom Flickity buttons
+.carouselButtons {
+  display: flex;
+  gap: 10px;
+  .ui-icon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    fill: $khaki;
+    transition: fill 150ms ease-in;
+    &:hover {fill: $blue;}
+    &:active {fill: $light-blue;}
+    &:last-of-type {transform: rotate(180deg);}
+  }
+}
+
+// Native Flickity buttons
+.flickity-prev-next-button {
+  width: 32px;
+  height: 32px;
+  background-color: $khaki;
+  transition: background-color 150ms ease-in;
+  &:hover {background-color: $blue;}
+  &:focus {box-shadow: none;}
+  &:active {
+    opacity: 1;
+    background-color: $light-blue;
+  }
+  .flickity-button-icon {
+    width: 12px;
+    height: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: $white;
+  }
+}
+
+// Hover style links
+.link {
+  &-primary {
+    transition: color 0.2s ease-in-out;
+    &:hover {color: $blue;}
+  }
+  &-underline {
+    border-bottom: 1px solid $black;
+    transition:
+      color 0.2s ease-in-out,
+      border-bottom 0.2s ease-in-out;
+    &:hover {
+      color: $blue;
+      border-bottom: 1px solid $blue;
+    }
+  }
+  &-breadcrumb {
+    border-bottom: 1px solid transparent;
+    transition: color .15s ease-in-out,
+                border-color .15s ease-in-out;
+    &:hover {
+      color: $black;
+      border-color: $black;
+    }
+    &:active {
+      color: $gray;
+      border-color: $gray;
+    }
+  }
+}
+
+// Common style for licenses-cards sections
+.licenses-cards {
+  @include media-breakpoint-down (sm) {
+    h2 {text-align: center;}
+  }
+}
+
+// Common popup
+.popup {
+  padding: 0 36px;
+  position: fixed;
+  z-index: 100;
+
+  &, .popup-overlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+  }
+
+  .popup-overlay {
+    position: absolute;
+    z-index: 101;
+  }
+
+  .inner {
+    padding: 60px 0;
+    max-width: 780px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+    border-radius: 16px;
+    box-shadow: $shadow-primary;
+    z-index: 102;
+
+    h2 {
+      padding: 0 16px 16px;
+      text-align: center;
+    }
+  
+    & > p {
+      padding: 0 16px;
+      margin: 0 auto;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    & > .ui-icon {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      stroke: $gray;
+      cursor: pointer;
+    }
+  }
+
+  @include media-breakpoint-down (md) {
+    .inner {
+      h2 {
+        font-size: 20px;
+        line-height: 28px;
+      }
+      & > p {
+        max-width: 320px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down (sm) {
+    padding: 0 18px;
+    .inner {padding: 60px 0 50px;}
+  }
+}
+
+// Opened popup
+.popup.open-popup {
+  & {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .popup-overlay {
+    visibility: visible;
+    opacity: 0.6;
+    pointer-events: auto;
+  }
+}
+
+// Form popup
+#form-popup {
+
+  .popup-overlay {
+    background-color: $blue;
+  }
+
+  .fields {
+    margin: 0 0 30px;
+  }
+
+  .form {
+    padding-top: 30px;
+    max-width: 620px;
+    &, form {
+      margin: 0 auto;
+    }
+  }
+
+  .ui-input span {top: calc(100% + 4px);}
+
+  .agreement {
+    flex-direction: column;
+
+    .ui-button {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+
+  @include media-breakpoint-down (md) {
+    .form {
+      padding: 30px 16px 0;
+    }
+    .fields {
+      margin: 0 0 47px;
+    }
+    .agreement {
+      flex-direction: column;
+  
+      .ui-button {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    .ui-input span {
+      text-align: center;
+    }
+  }
+
+  @include media-breakpoint-down (sm) {
+    .ui-input span {
+      left: -10px;
+      right: -10px;
+    }
+  }
+}
+
+// Success popup
+// #success-popup {
+// }
+
+// Cookie-modal
+#cookie-modal {
+  padding: 20px;
+  width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $white;
+  border: 1px solid $light-bg;
+  border-radius: 14px;
+  box-shadow: $shadow-primary;
+  z-index: 200;
+  &.hide-cookie {
+    display: none;
+  }
+  .ui-button {
+    width: calc(50% - 10px);
+  }
+
+  @include media-breakpoint-down (sm) {
+    width: auto;
+    transform: none;
+    left: 18px;
+    right: 18px;
+  }
+}

@@ -1,0 +1,14 @@
+//------------------------------------------------------------------------------
+//- Services page
+//------------------------------------------------------------------------------
+
+extends ../../layouts/base
+append config
+  -var title = 'ЦАОП №1 | Услуги'
+  -var pageClass = ''
+  
+  //- Necessary for the correct display of breadcrumbs
+  -var breadcrumbSelfName = 'Услуги'
+
+block main
+  include ../../sections/services/services-main.pug

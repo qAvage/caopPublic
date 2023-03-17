@@ -1,0 +1,84 @@
+// -----------------------------------------------------------------------------
+// Section FAQ
+// -----------------------------------------------------------------------------
+
+section.reviews {
+  .head {
+    text-align: center;
+    p {
+      margin: 0 auto;
+      max-width: 500px;
+    }
+  }
+
+  #reviews-carousel {
+    padding-top: 30px;
+    .carousel-cell {
+      margin-right: 20px;
+      width: calc(33.33333333% - 40px / 3);
+    }
+    .flickity-page-dots {display: none;}
+    .flickity-prev-next-button {
+      top: auto;
+      bottom: 100%;
+      transform: none;
+      &.previous {
+        left: auto;
+        right: 42px;
+      }
+      &.next {
+        right: 0;
+      }
+    }
+    .carousel-content {
+      padding: 26px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      align-items: center;
+      background-color: $white;
+      border: 1px solid $dark-bg;
+      border-radius: 12px;
+    }
+
+    .ui-icon {
+      width: 200px;
+      height: 90px;
+    }
+  }
+
+  @include media-breakpoint-down (lg) {
+    #reviews-carousel {
+      .carousel-cell {
+        margin-right: 18px;
+        width: calc(50% - 9px);
+      }
+
+      .carousel-content {
+        .btn-primary-sm {max-width: 340px;}
+      }
+      .flickity-prev-next-button {display: none;}
+      .flickity-page-dots {display: flex;}
+    }
+  }
+
+  @include media-breakpoint-down (md) {
+    #reviews-carousel {
+      .carousel-cell {width: 100%;}
+    }
+  }
+
+  @include media-breakpoint-down (sm) {
+    #reviews-carousel {
+      margin-left: -18px;
+      margin-right: -18px;
+      .carousel-cell {
+        margin-right: -16px;
+      }
+      .carousel-content {
+        margin-left: 18px;
+        margin-right: 18px;
+      }
+    }
+  }
+}

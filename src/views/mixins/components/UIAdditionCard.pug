@@ -1,0 +1,8 @@
+//- Addition card mixin
+
+mixin uiAdditionCard(content='ЦАОП №1', amount=1)
+  each i in Array(amount)
+    .ui-addition-card&attributes(attributes)
+      div
+        +uiIcon('logo')
+        p= content

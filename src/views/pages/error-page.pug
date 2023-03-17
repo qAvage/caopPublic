@@ -1,0 +1,20 @@
+//------------------------------------------------------------------------------
+//- Error page
+//------------------------------------------------------------------------------
+
+extends ../layouts/base
+
+
+append config
+  -var pageName = 'error'
+  -var title = 'ЦАОП №1 — многопрофильный медицинский центр в Невском районе'
+  -var pageClass = 'error-page'
+
+//- Disabling breadcrumbs on the error-page
+block breadcrumbs
+
+block main
+  include ../sections/common/error.pug
+
+//- Disabling common sections on the error-page
+block common

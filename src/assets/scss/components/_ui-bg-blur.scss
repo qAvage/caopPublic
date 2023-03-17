@@ -1,0 +1,18 @@
+//------------------------------------------------------------------------------
+// Bg blur
+//------------------------------------------------------------------------------
+
+.bg-blur {
+  width: 320px !important;
+  height: 320px !important;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.24;
+  filter: blur(100px);
+  pointer-events: none;
+
+  @include media-breakpoint-down (sm) {
+    width: 220px;
+    height: 220px;
+  }
+}

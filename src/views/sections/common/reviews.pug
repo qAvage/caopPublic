@@ -1,0 +1,36 @@
+//------------------------------------------------------------------------------
+//- Reviews section
+//------------------------------------------------------------------------------
+-
+  var reviewCards = [
+    {
+      icon: 'prodoctorov',
+      href: reviewLinks.prodoctorov
+    },
+    {
+      icon: 'napopravku',
+      href: reviewLinks.napopravku
+    },
+    {
+      icon: 'yandex',
+      href: reviewLinks.yandex
+    },
+    {
+      icon: 'twogis',
+      href: reviewLinks.twoGis
+    }
+  ]
+
+section.reviews(class=[pageName === 'home' ? 'sctn-lg' : 'sctn-md'])
+  .container
+    .head
+      +uiTitleIcon Отзывы
+      h2 Что говорят пациенты о нашей клинике
+      p Наши пациенты знают, что наша миссия — забота о здоровье. Каждый человек для нас уникален. Приходите к нам и почувствуйте это
+    #reviews-carousel
+      each item in reviewCards
+        .carousel-cell
+          .carousel-content.u-preload
+            a(href=item.href target="_blank"): +uiIcon(item.icon)
+            +uiButton('primary-sm', 'a')(href=item.href target="_blank") Перейти
+    

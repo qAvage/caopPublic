@@ -1,0 +1,155 @@
+// -----------------------------------------------------------------------------
+// Section FAQ
+// -----------------------------------------------------------------------------
+
+section.faq {
+  .head {
+    padding-bottom: 40px;
+    max-width: 480px;
+  }
+
+  // Accordion
+  .accordion {
+    padding-right: 20px;
+
+    p {line-height: 20px;}
+
+    h4 {line-height: 22px;}
+
+    &-content {overflow: hidden;}
+
+    &-enter-active,
+    &-leave-active {
+      will-change: height, opacity;
+      height: 0;
+      transition: height .3s ease, opacity .4s ease;
+    }
+
+    &-enter-from,
+    &-leave-to {
+      height: 0 !important;
+      opacity: 0;
+    }
+
+    &-item {
+      padding-bottom: 10px;
+      border: 1px solid $dark-bg;
+      border-radius: 12px;
+      transition: box-shadow 0.25s ease-in-out;
+
+      &:hover {box-shadow: $shadow-primary;}
+
+      &:not(:last-child) {margin-bottom: 16px;}
+    }
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 20px 10px 20px;
+      cursor: pointer;
+
+      i.ui-icon {
+        margin-left: 20px;
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        fill: $blue;
+        transition: transform .3s ease, fill .3s ease;
+      }
+
+      &.is-active {
+
+        i {
+          fill: $light-blue;
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &-content {
+      p {padding: 0 60px 10px 20px}
+    }
+  }
+
+  // Card
+  .card {
+    padding: 70px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+    position: relative;
+    overflow: hidden;
+    background-color: $light-bg;
+    border-radius: 16px;
+    text-align: center;
+
+    .bg-blur {
+      top: -160px;
+      right: -160px;
+      z-index: 0;
+    }
+
+    h3, p {
+      max-width: 420px;
+    }
+
+    p {
+      padding: 20px 0 40px;
+      line-height: 20px;
+    }
+
+    .ui-social-icons {
+      align-self: stretch;
+
+      .ui-social-icon {
+        width: 33%;
+      }
+
+      .icon-plate {
+        padding: 16px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $white;
+        border-radius: 10px;
+        transition: box-shadow 0.25s ease-in-out;
+
+        &:hover {
+          box-shadow: $shadow-primary;
+        }
+      }
+
+      i.ui-icon {
+        margin-right: 8px;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-down (xl) {
+    .card .ui-social-icons {
+        .icon-plate {flex-direction: column;}
+
+        i.ui-icon {
+          margin-right: 0px;
+          margin-bottom: 4px;
+        }
+      }
+  }
+
+  @include media-breakpoint-down (lg) {
+    .accordion {padding: 0;}
+  }
+
+  @include media-breakpoint-down (sm) {
+    .card {
+      margin-right: -18px;
+      margin-left: -18px;
+      padding: 50px 18px;
+      border-radius: 0;
+    }
+  }
+}

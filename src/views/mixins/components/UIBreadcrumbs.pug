@@ -1,0 +1,11 @@
+//- Breadcrumbs mixin
+
+mixin uiBreadcrumbs
+  .container
+    .breadcrumbs.u-no-select.u-preload
+      a(href="/").link-breadcrumb Главная
+      +uiIcon('breadcrumbs-arrow')
+      if breadcrumbParentPage
+        a(href="/" + breadcrumbParentPage.href).link-breadcrumb= breadcrumbParentPage.namePage
+        +uiIcon('breadcrumbs-arrow')
+      span= breadcrumbSelfName

@@ -1,0 +1,109 @@
+// -----------------------------------------------------------------------------
+// Section about (home-page)
+// -----------------------------------------------------------------------------
+
+section.about-homepage {
+  .description {
+    position: sticky;
+    top: calc(50% - 216px);
+    p:not(:last-child) {padding-bottom: 14px;}
+  }
+
+  // Cards style
+  .wrapper {display: flex;}
+  .card {
+    position: relative;
+    margin-top: 30px;
+    padding: 70px 22px 38px;
+    background-color: $white;
+    border-radius: 12px;
+    box-shadow: $shadow-primary;
+    text-align: center;
+    h3{padding-bottom: 14px;}
+    i.ui-icon {
+      position: absolute;
+      top: 0;
+      right: 50%;
+      transform: translate(50%, -30px);
+      width: 80px;
+      height: 80px;
+    }
+  }
+  #about-home-carousel::after {content: '';}
+
+  // Counter style
+  .counter {
+    padding-top: 60px;
+  }
+
+  .counter-wrapper {
+    padding: 27px 0;
+    position: relative;
+    background-color: $white;
+    border-radius: 16px;
+    box-shadow: $shadow-primary;
+  }
+
+  .count {
+    padding: 0 20px;
+    text-align: center;
+    span {
+      display: block;
+      padding: 15px 0;
+      color: $blue;
+      font-size: 36px;
+      font-weight: 800;
+    }
+    p {
+      margin: 0 auto;
+      max-width: 240px;
+    }
+  }
+
+  // Media queries
+  @include media-breakpoint-down (xl) {
+    .description {top: calc(50% - 216px / 2);}
+    .card {padding: 70px 20px 25px;}
+  }
+
+  @include media-breakpoint-down (sm) {
+    // Cards style
+    .cards-wrapper {
+      padding-bottom: 200px;
+      overflow: hidden;
+    }
+
+    #about-home-carousel {
+      margin-left: -18px;
+      margin-right: -18px;
+      &::after {
+        content: 'flickity';
+        display: none;
+      }
+      .flickity-viewport {
+        overflow: visible;
+        transition: height 0.2s ease-in-out;
+      }
+      .wrapper {
+        width: 100%;
+        margin-right: -16px;
+      }
+      .card {
+        margin-right: 18px;
+        margin-left: 18px;
+        padding: 70px 16px 18px;
+      }
+    }
+    
+    // Counter style
+    .counter {
+      padding-top: 0;
+      margin-top: -140px;
+    }
+
+    .counter-wrapper {
+      padding: 22px 0;
+      border-radius: 12px;
+    }
+  }
+}

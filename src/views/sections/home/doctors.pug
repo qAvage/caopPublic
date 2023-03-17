@@ -1,0 +1,15 @@
+//------------------------------------------------------------------------------
+//- Doctors section (home-page)
+//------------------------------------------------------------------------------
+//- Intended only for the homepage
+
+section.doctors-homepage.sctn-lg
+  .container
+    +uiTitleIcon Врачи
+    h2 Наши специалисты
+    p Здесь вы можете узнать больше информации о наших врачах, их специализациях и опыте работы
+    #doctors-carousel.card-carousel
+      each i in doctorsList
+        .carousel-cell
+          +uiDoctorCard(i.name, i.surname, i.spec, i.href, i.img)
+    +uiButton('primary-md', 'a')(href="/doctors") Посмотреть всех врачей

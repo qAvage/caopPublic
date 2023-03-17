@@ -1,0 +1,122 @@
+// -----------------------------------------------------------------------------
+// About (common)
+// -----------------------------------------------------------------------------
+
+section.about {
+  position: relative;
+
+  // Description block
+  h2 {max-width: 500px;}
+  p {padding-bottom: 16px;}
+  ul {padding: 14px 0 59px;}
+  .selecting-slides {display: flex;}
+  .carouselButtons {
+    margin-left: auto;
+    align-self: flex-end;
+  }
+  
+  // Carousel style
+  .about-carousel {
+    .no-visible {opacity: 0;}
+    // Common styles for both carousel
+    .carousel {
+      .flickity-viewport {
+        height: 100% !important;
+        border-radius: 20px;
+      }
+    }
+    .carousel-cell {
+      margin-right: 20px;
+      width: 100%;
+      height: 100%;
+      .wrapper {
+        border-radius: 20px;
+        background-position: center center;
+        background-size: cover;
+      }
+    }
+    .flickity-page-dots {display: none;}
+    
+    // Home page carousel
+    .carousel-home-page {
+      height: 100%;
+      .carousel-cell {
+        .wrapper {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    // About page carousel
+    .carousel-about-page {
+      margin-bottom: 20px;
+      height: calc(78% - 10px);
+      .carousel-cell {
+        .wrapper {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .carousel-nav {
+      height: calc(22% - 10px);
+      .flickity-viewport {
+        height: 100% !important;
+        border-radius: 10px;
+      }
+      .carousel-cell {
+        width: calc(100% / 3 - 40px / 3);
+        height: 100%;
+        border-radius: 10px;
+        background-position: center center;
+        background-size: cover;
+        opacity: 0.5;
+        transition: opacity .25s ease-in-out;
+        &.is-nav-selected {opacity: 1;}
+      }
+    }
+  }
+
+  // Media queries
+  @include media-breakpoint-down (xl) {
+    .about-carousel {
+      .carousel-nav {display: block;}
+    }
+  }
+
+  @include media-breakpoint-down (lg) {
+    // Description block
+    ul {padding: 14px 0 40px;}
+    h1 {max-width: 500px;}
+
+    .carouselButtons {display: none;}
+    .about-carousel {
+      .carousel {height: 400px;}
+      .carousel-nav {display: none;}
+      .flickity-page-dots {display: flex;}
+    }
+  }
+
+  @include media-breakpoint-down (sm) {
+    h1, h2 {max-width: 370px;}
+    .about-carousel {
+      .carousel {
+        margin-left: -18px;
+        margin-right: -18px;
+        height: 360px;
+        .flickity-viewport {border-radius: 0;}
+        .carousel-cell {
+          margin-right: -16px;
+          .wrapper {
+            margin-left: 18px;
+            margin-right: 18px;
+            width: calc(100% - 36px);
+            border-radius: 16px;
+          }
+        }
+      }
+    }
+  }
+}

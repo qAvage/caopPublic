@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// Sections entrypoint
+// -----------------------------------------------------------------------------
+
+// Common
+@import 'common/about';                       // About (common)
+@import 'common/contacts';                    // Contacts (common)
+@import 'common/catalog';                     // Catalog (common)
+@import 'common/faq';                         // Faq
+@import 'common/feedback';                    // Feedback
+@import 'common/reviews';                     // Reviews
+
+// Homepage
+@import 'home/hero';                          // Hero (homepage)
+@import 'home/services';                      // services (homepage)
+@import 'home/about';                         // About (homepage)
+@import 'home/doctors';                       // doctors (homepage)
+
+// Services-page
+@import 'services/services-main';             // Services-main (services-page)
+
+// Doctors-page
+@import 'doctors/doctors-main';               // Doctors-main (doctors-page)
+
+// About-page
+@import 'about/useful-links';                 // Useful links (about-page)
+
+// Price-page
+@import 'price/hero-price';                    // Hero price (price-page)
+
+// Price-page
+@import 'programs/programs';                    // Hero price (price-page)

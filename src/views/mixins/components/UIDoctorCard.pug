@@ -1,0 +1,17 @@
+//- Doctor card mixin
+
+mixin uiDoctorCard(name, surname, spec, href, img, cell=false)
+  .ui-doctor-card
+    if !img
+      .img.no-img
+        +uiIcon('profile')
+    else
+      .img(style= "background-image: url(" + require('@/assets/images/' + img) + ')')
+    .header
+      h4= surname
+      h4= name
+    .body
+      p= spec
+    .footer
+      +uiButton('primary-sm').trigger-popup Записаться
+      +uiButton('outline', 'a')(href='/doctors/'+href+'.html') Подробнее

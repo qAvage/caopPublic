@@ -1,0 +1,16 @@
+// -----------------------------------------------------------------------------
+// Section doctors (home-page)
+// -----------------------------------------------------------------------------
+
+section.doctors-homepage {
+  .container > p {max-width: 480px;}
+
+  // Carousel
+  .flickity-viewport {border-radius: 14px 14px 0 0;}
+
+  @include media-breakpoint-down (sm) {
+
+    // Carousel
+    .flickity-viewport {border-radius: 0;}
+  }
+}

@@ -1,0 +1,14 @@
+//- List of data clinic mixin
+
+mixin columnOfDataList(col)
+  .col-12.col-md-6: ul
+    each i in col
+      li
+        h4= i.title + ':'
+        p= i.content
+
+mixin uiListData(leftCol, rightCol)
+  .ui-data-list
+    .row
+      +columnOfDataList(leftCol)
+      +columnOfDataList(rightCol)

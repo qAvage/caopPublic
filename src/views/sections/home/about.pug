@@ -1,0 +1,84 @@
+//------------------------------------------------------------------------------
+//- About section
+//------------------------------------------------------------------------------
+//- Intended only for the homepage
+
+//- Counter content
+-
+  var aboutCards = [
+    {
+      heading: 'Забота о вас, а не о себе',
+      icon: 'peace',
+      content: 'Задача наших специалистов — качественные медицинские услуги, а не финансовый успех организации. Наши главные принципы —  уважение, доверие и честность'
+    },
+    {
+      heading: 'Есть все необходимое',
+      icon: 'puzzle',
+      content: 'Врачи разных профилей, УЗИ, дневной стационар, телемедицина и сотрудничество с лабораторией позволяют нам сделать процесс лечения эффективным и комфортным'
+    },
+    {
+      heading: 'Постоянное совершенствование',
+      icon: 'reward',
+      content: 'Мы всегда повышаем качество и эффективность медицинских услуг, у нас только современное оборудование, которое позволяет точнее проводить исследования'
+    },
+    {
+      heading: 'Доступное лечение',
+      icon: 'priceDown',
+      content: 'Мы предлагаем конкурентные цены, систему скидок на программы диагностики, а также разные акции и мероприятия'
+    }
+  ]
+
+//- Counter content
+-
+  var aboutCounts = [
+    {
+      value: '>190',
+      description: 'Обращений пациентов в нашу клинику в месяц'
+    },
+    {
+      value: '>2500',
+      description: 'Лабораторных исследований мы произвели за 2022 год'
+    },
+    {
+      value: '52%',
+      description: 'Пациентов пришли к нам по рекомендации друзей'
+    },
+    {
+      value: '>89%',
+      description: 'Пациентов получили лечение, в день обращения'
+    },
+  ]
+
+//- About section
+section.about-homepage.sctn-lg
+  .cards-wrapper
+    .container
+      //- Cards part
+      .row.gy-4
+        .col-12.col-md-6.col-lg-4
+          .description
+            +uiTitleIcon О нас
+            h2 Почему именно мы?
+            p Компетентные специалисты с большим стажем практической работы. 
+            p Соблюдение всех норм конфиденциальности, этики и деонтологии медицинской деятельности
+        .col-12.col-md-6.col-lg-8
+          #about-home-carousel.row.gy-0.gy-sm-4.gy-md-3
+            each item in aboutCards
+              .wrapper.col-md-12.col-lg-6
+                .card
+                  +uiIcon(item.icon)
+                  h3= item.heading
+                  p= item.content
+      //- Counter part
+  .counter
+    .container
+      .counter-wrapper
+        ul.row.gy-3
+          each item in aboutCounts
+            li.col-12.col-sm-6.col-lg-3
+              .count
+                span= item.value
+                p= item.description
+      
+
+

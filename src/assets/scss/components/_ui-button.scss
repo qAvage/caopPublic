@@ -1,0 +1,90 @@
+// -----------------------------------------------------------------------------
+// Ui button component stylesheets
+// -----------------------------------------------------------------------------
+
+// Static, hover, active color
+@mixin btnCondition($kind) {
+  @if $kind == first {
+    color: $white;
+    background-color: $blue;
+  }
+  @if $kind == second {
+    color: $blue;
+    background-color: $light-bg;
+  }
+  @if $kind == third {
+    color: $white;
+    background-color: $light-blue;
+  }
+  @if $kind == fourth {
+    color: $blue;
+    background-color: $white;
+  }
+}
+
+// Static, hover, active color only for primary button
+@mixin btnPrimaryColor {
+  @include btnCondition(first);
+  &:hover {@include btnCondition(third);}
+  &:active {@include btnCondition(first);}
+}
+
+.ui-button {
+  display: inline-block;
+  transition:
+    color .25s ease-in-out,
+    background-color .25s ease-in-out;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:active {transition: background-color .1s ease-in-out}
+  
+  &.btn {
+    &-primary-md {
+      padding: 17px 36px;
+      border-radius: 10px;
+      @include btnPrimaryColor
+    }
+
+    &-primary-sm {
+      padding: 10px 0;
+      width: 100%;
+      border-radius: 8px;
+      text-align: center;
+      @include btnPrimaryColor
+    }
+
+    &-secondary-md {
+      padding: 14px 30px;
+      border-radius: 10px;
+      @include btnCondition(second);
+      &:hover {@include btnCondition(first);}
+      &:active {@include btnCondition(third);}
+    }
+
+    &-secondary-sm {
+      padding: 14px 0;
+      width: 100%;
+      border-radius: 10px;
+      text-align: center;
+      @include btnCondition(second);
+      &:hover {@include btnCondition(first);}
+      &:active {@include btnCondition(third);}
+    }
+
+    &-outline {
+      padding: 9px 0;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid $dark-bg;
+      text-align: center;
+      @include btnCondition(fourth);
+      &:hover {@include btnCondition(second);}
+      &:active {@include btnCondition(fourth);}
+    }
+  }
+
+}

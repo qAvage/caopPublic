@@ -1,0 +1,134 @@
+//------------------------------------------------------------------------------
+// Form
+//------------------------------------------------------------------------------
+
+
+.form {
+
+  .fields {
+    margin: 40px 0 57px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .agreement {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  // ui-input
+  .ui-input {
+    position: relative;
+    flex-basis: 100%;
+    input {
+      padding: 17px 16px 17px 0;
+      width: 100%;
+      color: $black;
+      border: 1px solid $dark-bg;
+      border-radius: 10px;
+      outline: none;
+      text-indent: 16px;
+      transition: border-color .25s ease-in-out, box-shadow .25s ease-in-out;
+      &:focus { box-shadow: $shadow-primary;}
+      &:hover {box-shadow: $shadow-primary;}
+      &.error {border-color: $rad;}
+    }
+    span {
+      position: absolute;
+      left: 7px;
+      right: 7px;
+      top: calc(100% + 5px);
+      color: $rad;
+      z-index: 1;
+    }
+  }
+  
+  .error-enter-active, .error-leave-active {transition: opacity .25s ease-in-out;}
+  .error-enter-from, .error-leave-to {opacity: 0;}
+
+
+  // ui-checkbox
+
+  .ui-checkbox {
+    display: inline-flex;
+
+    .checkbox {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      flex-shrink: 0;
+      position: relative;
+      border: 1px solid $blue;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: border-color .25s ease-in-out;
+
+      &:hover {border-color: $light-blue;}
+
+      &.error {
+        border-color: $rad;
+        &:hover {border-color: #C25A73;}
+      }
+      &.shake {
+        animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+      }
+      @keyframes shake {
+        10%, 90% {transform: translate3d(-1px, 0, 0);}
+        20%, 80% {transform: translate3d(2px, 0, 0);}
+        30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
+        40%, 60% {transform: translate3d(4px, 0, 0);}
+      }
+
+      i {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        svg {
+          fill: $blue;
+          transition: fill 0.25s ease-in-out;
+        }
+        &:hover {svg {fill: $light-blue;}}
+      }
+    }
+
+    p {
+      margin-left: 6px;
+      a {color: $blue;}
+    }
+  }
+
+  @include media-breakpoint-down (md) {
+
+    form {
+      margin: 0 auto;
+      max-width: 350px;
+    }
+
+    .fields {
+      margin-top: 30px;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .agreement {
+      flex-direction: column;
+      button {width: 100%;}
+    }
+  }
+
+  @include media-breakpoint-down (sm-md) {
+
+    .ui-input span {
+      left: 0;
+      right: 0;
+      font-size: 11px;
+      text-align: center;
+    }
+  }
+}

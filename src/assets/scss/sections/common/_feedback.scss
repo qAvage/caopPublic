@@ -1,0 +1,60 @@
+// -----------------------------------------------------------------------------
+// Section feedback
+// -----------------------------------------------------------------------------
+
+section.feedback {
+  .wrapper {
+    padding: 50px 0;
+    background-color: $light-bg;
+  }
+
+  .calendar {
+    align-self: center;
+    .icon-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      padding: 40px 50px 50px 40px;
+      background-color: $white;
+      border-radius: 20px;
+      box-shadow: $shadow-primary;
+    }
+    .icon {
+      width: 82%;
+      position: relative;
+  
+      &::after {
+        content: "";
+        padding-top: 88%;
+        display: block;
+      }
+    }
+  }
+
+  .main-form {
+    display: flex;
+    align-items: center;
+  }
+  .content {
+    flex-grow: 1;
+    h2 {max-width: 500px;}
+    & > p {max-width: 400px;}
+  }
+
+  @include media-breakpoint-down (lg) {
+    .wrapper {padding: 60px 0;}
+    .calendar {display: none;}
+  }
+
+  @include media-breakpoint-down (md) {
+    .content {
+      h2, & > p {
+        margin: 0 auto;
+        max-width: 380px;
+        text-align: center;
+      }
+    }
+  }
+}

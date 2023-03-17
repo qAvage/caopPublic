@@ -1,0 +1,12 @@
+//- Service card mixin
+  
+mixin uiServiceCard(heading, content, href)
+  .ui-service-card
+    .header
+      h4= heading
+    .body.scroll-bar
+      p= content
+    .footer
+      +uiButton('outline', 'a')(href='/services/'+href+'.html') Подробнее
+
+

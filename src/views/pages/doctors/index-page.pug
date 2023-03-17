@@ -1,0 +1,14 @@
+//------------------------------------------------------------------------------
+//- Doctors page
+//------------------------------------------------------------------------------
+
+extends ../../layouts/base
+append config
+  -var title = 'ЦАОП №1 | Врачи'
+  -var pageClass = ''
+  
+  //- Necessary for the correct display of breadcrumbs
+  -var breadcrumbSelfName = 'Врачи'
+
+block main
+  include ../../sections/doctors/doctors-main.pug

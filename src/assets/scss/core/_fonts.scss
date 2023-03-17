@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// Fonts
+// -----------------------------------------------------------------------------
+
+/* open-sans-regular - cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('@/assets/fonts/open-sans-v34-cyrillic-regular.woff') format('woff');
+}
+
+/* open-sans-600 - cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''),
+       url('@/assets/fonts/open-sans-v34-cyrillic-600.woff') format('woff');
+}
+
+/* open-sans-700 - cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('@/assets/fonts/open-sans-v34-cyrillic-700.woff') format('woff');
+}

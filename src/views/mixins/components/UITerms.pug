@@ -1,0 +1,13 @@
+//- Terms mixin
+
+-
+  var terms = [
+    policy.license,
+    policy.privacyPolicy,
+    policy.personalData
+  ]
+
+mixin uiTerms
+  ul&attributes(attributes)
+    each item in terms
+      li: a(href=item.href target="_blank").p-sm=item.title

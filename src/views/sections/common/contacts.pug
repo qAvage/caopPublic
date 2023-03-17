@@ -1,0 +1,40 @@
+//------------------------------------------------------------------------------
+//- Contacts section
+//------------------------------------------------------------------------------
+//- Common contacts section
+
+section.contacts(class=[pageName === 'contacts' ? 'contacts-main' : 'contacts-common'])
+  .wrapper
+    .container-md
+      .row.wrap
+        .col-12.col-md-6
+          .map: <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A330ffd3d2cbec32023f91ce34c104e23fc54207861c475430e1c961ef0409ebe&amp;source=constructor" width="100%" height="100%" frameborder="0" loading="lazy"></iframe>
+        .col-12.col-md-6
+          .content
+            +uiTitleIcon Контакты
+            if pageName === 'contacts'
+              h1 #[span Контакты] нашей клиники
+              h4 Как нас найти? Мы рядом!
+            else
+              h2 Как нас найти? Мы рядом!
+              h4 Контакты клиники ЦАОП № 1
+            ul
+              li
+                +uiIcon('phone')
+                +uiPhoneNumber
+              li
+                +uiIcon('mail')
+                a.link-primary(href="mailto:" + mainEmail target="_blank")= mainEmail
+              li
+                +uiIcon('geo')
+                +uiAdress
+              li
+                +uiIcon('time')
+                span с #{openingHours.from} до #{openingHours.to} без выходных
+              li
+                +uiIcon('compass')
+                span Как добраться: от станции метро «Пролетарская» — автобус №115 и №115А, до остановки «улица Седова». Вам нужно двигаться в сторону пр. Александровской фермы. ЦАОП №1 находится в углу дома
+            h4 Свяжись с нами в социальных сетях
+            +uiSocialIcons
+            h4 Узнать о нас больше
+            a.link-underline(href=reviewLinks.prodoctorov target="_blank") prodoctorov.ru

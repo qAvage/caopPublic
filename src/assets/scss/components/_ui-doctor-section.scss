@@ -1,0 +1,100 @@
+//------------------------------------------------------------------------------
+// Doctor section
+//------------------------------------------------------------------------------
+
+.doctor {
+  padding: 40px 0 70px;
+  h1 {padding: 0;}
+  .spec {padding: 20px 0 30px;}
+  .services {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: $light-bg;
+    border-radius: 16px;
+    li {
+      justify-content: space-between;
+      gap: 90px;
+      display: flex;
+      padding: 10px 0;
+      &:not(:first-of-type) {border-top: 1px solid $dark-bg;}
+      span:last-child {flex-shrink: 0;}
+    }
+  }
+  .content {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .list h4 {padding-bottom: 12px;}
+  .content-wrap .btn-secondary-sm {display: none;}
+  .img-wrap {
+    .img {
+      margin-top: -11px;
+      margin-bottom: 20px;
+      width: 100%;
+      height: 400px;
+      border-radius: 16px;
+      background-position: top;
+      background-size: cover;
+      &.no-img {
+        padding: 20px;
+      }
+    }
+    .spec {display: none;}
+  }
+  @include media-breakpoint-down (lg) {
+    .spec {display: none;}
+    .img-wrap {
+      order: -1;
+      .img {
+        margin-top: 10px;
+        max-width: 50%;
+      }
+      .spec {display: block;}
+      .ui-button {display: none;}
+    }
+    .content-wrap {
+      .ui-button {
+        width: 100%;
+        max-width: 50%;
+      }
+      .btn-secondary-sm {
+        margin-top: 40px;
+        display: block;
+      }
+    } 
+  }
+
+  @include media-breakpoint-down (md) {
+    padding: 30px 0 40px;
+    .services {
+      padding: 0;
+      background-color: $white;
+      li {
+        padding: 16px;
+        flex-direction: column;
+        gap: 8px;
+        background-color: $light-bg;
+        border-radius: 10px;
+        &:not(:first-of-type) {
+          margin-top: 12px;
+          border-top: none;
+        }
+        span:first-child {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 22px;
+        }
+      }
+    }
+    .content {padding-top: 80px;}
+    .img-wrap {
+      .img {
+        max-width: 100%;
+        height: 360px;
+      }
+    }
+    .content-wrap .ui-button {max-width: 100%;}
+  }
+}

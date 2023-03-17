@@ -1,0 +1,29 @@
+//------------------------------------------------------------------------------
+// Addition card
+//------------------------------------------------------------------------------
+
+.ui-addition-card {
+  & > div {
+    padding: 26px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background-color: $light-bg;
+    color: $gray;
+    border-radius: 12px;
+    text-align: center;
+    .ui-icon {
+      width: 60px;
+      height: 60px;
+      fill: $blue;
+    }
+    p {max-width: 228px;}
+  }
+
+  @include media-breakpoint-down (xl) {
+    display: none;
+  }
+}

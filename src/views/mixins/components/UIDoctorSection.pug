@@ -1,0 +1,28 @@
+//- Doctor section mixin
+
+mixin uiDoctorSection(surname='Фамилия', name='Имя Отчество', spec='Специализация', services=[], img)
+  section.doctor
+    .container
+      +uiTitleIcon Врач
+      h1 #[span #{surname}] #[br]#{name}
+      .row
+        .content-wrap.col-lg-8
+          h4.spec= spec
+          ul.services
+            each i in services
+              li
+                span= i.title
+                span= i.price + ' ₽'
+          +uiButton('primary-md').trigger-popup Записаться на прием
+          .content
+            block content
+          +uiButton('secondary-sm', 'a')(href=reviewLinks.prodoctorov target="_blank") Оставить отзыв
+        .img-wrap.col-lg-4
+          h4.spec= spec
+          if img
+            .img(style= "background-image: url(" + require('@/assets/images/' + img) + ')')
+          else
+            .img.no-img
+              +uiIcon('profile')
+          +uiButton('secondary-sm', 'a')(href=reviewLinks.prodoctorov target="_blank") Оставить отзыв
+          

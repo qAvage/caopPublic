@@ -1,0 +1,14 @@
+//------------------------------------------------------------------------------
+//- Programs page
+//------------------------------------------------------------------------------
+
+extends ../layouts/base
+append config
+  -var title = 'ЦАОП №1 | Программы'
+  -var pageClass = ''
+
+  //- Necessary for the correct display of breadcrumbs
+  -var breadcrumbSelfName = 'Программы'
+  
+block main
+  include ../sections/programs/programs.pug

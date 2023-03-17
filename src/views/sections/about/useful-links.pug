@@ -1,0 +1,14 @@
+//------------------------------------------------------------------------------
+//- Useful links section
+//------------------------------------------------------------------------------
+//- for about page
+
+section.useful-links.sctn-md
+  .container
+    h2.pd-lg Полезные ссылки
+    .row.gy-5
+      .col-lg-8
+        ul: each i in usefulLinks
+          +uiUsefulLink(i.content, i.href)
+      .col-lg-4
+        .image
